@@ -10,6 +10,11 @@
 <meta property="og:description" content="Know whether everything plugged into your Mac is healthy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugsquire.luongnv.com/">
+<meta property="og:image" content="https://plugsquire.luongnv.com/assets/media/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Plugsquire's overview window under the line “Everything in your Mac’s company.”">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,6 +27,7 @@
     <a class="brand" href="index.html" aria-label="Plugsquire home"><img src="assets/logo-site.svg" alt="Plugsquire" width="178" height="40"></a>
     <nav class="nav" aria-label="Main">
       <a class="nav-link" href="#checks">What it checks</a>
+      <a class="nav-link" href="#tour">Tour</a>
       <a class="nav-link" href="#how">How it works</a>
       <a class="nav-link" href="#pricing">Pricing</a>
       <a class="nav-link" href="#faq">FAQ</a>
@@ -36,9 +42,12 @@
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
-      <div>
-        <p class="motto reveal reveal-1">Everything in your Mac's company.</p>
-        <h1 id="hero-title" class="reveal reveal-2">Know whether everything plugged into your Mac is healthy</h1>
+      <div class="hero-copy">
+        <div class="hero-title">
+          <p class="motto reveal reveal-1">Everything in your Mac's company.</p>
+          <h1 id="hero-title" class="reveal reveal-2">Know whether everything plugged into your Mac is healthy</h1>
+        </div>
+        <div class="hero-side">
         <p class="lead reveal reveal-3">Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems. Each finding comes with its evidence and the fix.</p>
         <div class="hero-ctas reveal reveal-4">
           <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">
@@ -51,23 +60,16 @@
           <li>No root access, no private APIs, no helper daemon</li>
           <li>Serial numbers never leave your Mac</li>
         </ul>
+        </div>
       </div>
 
-      <!-- Decorative: the buses Plugsquire reads, drawn as a roll. Not a screenshot of the app. -->
-      <div class="roll" aria-hidden="true">
-        <div class="roll-head"><img src="assets/logo-icon.svg" alt=""><span>Plugsquire</span></div>
-        <ol>
-          <li>USB, with its hub tree<span class="dot"></span></li>
-          <li>Bluetooth, connected and remembered<span class="dot"></span></li>
-          <li>Thunderbolt<span class="dot"></span></li>
-          <li>Displays<span class="dot"></span></li>
-          <li>Storage<span class="dot"></span></li>
-          <li>Power adapter<span class="dot"></span></li>
-          <li>Internal battery<span class="dot"></span></li>
-          <li>Cameras<span class="dot"></span></li>
-          <li>Audio<span class="dot"></span></li>
-        </ol>
-      </div>
+      <!-- The app's overview window, captured with its own snapshot mode (Signature appearance). -->
+      <figure class="hero-shot reveal reveal-5">
+        <picture>
+          <source type="image/webp" srcset="assets/media/overview-1600.webp 1600w, assets/media/overview-2400.webp 2400w" sizes="(max-width: 1168px) 100vw, 1120px">
+          <img src="assets/media/overview-1200.png" width="1600" height="1046" alt="Plugsquire's overview: three things deserve your attention, seven devices connected, and the audit's findings, each with its device and severity." fetchpriority="high">
+        </picture>
+      </figure>
     </div>
   </section>
 
@@ -149,6 +151,73 @@
     </div>
   </section>
 
+  <!-- Tour: real windows from the app's snapshot mode. Pro features are labelled; the app itself has no Pro UI. -->
+  <section id="tour" class="tour" aria-labelledby="tour-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="tour-title">A closer look</h2>
+        <p class="lead">Five screens from the app, from a finding's fix guide to the switch that makes Plugsquire look like any other Mac app.</p>
+      </div>
+
+      <div class="tour-list">
+        <article class="tour-item">
+          <div class="tour-copy">
+            <h3>Every finding tells you what to do.</h3>
+            <p>Open a device to see the evidence, what to do in one line, numbered steps where they help, and the source they come from.</p>
+          </div>
+          <picture class="tour-shot">
+            <source type="image/webp" srcset="assets/media/fix-guide-1600.webp">
+            <img src="assets/media/fix-guide-1200.png" width="1600" height="1046" loading="lazy" alt="AirPods Pro selected: a “Firmware is out of date” finding with what to do, seven numbered steps and its source, Apple Support.">
+          </picture>
+        </article>
+
+        <article class="tour-item">
+          <div class="tour-copy">
+            <h3>See where space goes. Free it safely. <span class="pro-tag">Pro</span></h3>
+            <p>The storage breakdown is free: each category, its size and how safe it is to clear. With Pro, Clean lists exactly what would go and asks before anything is removed.</p>
+          </div>
+          <picture class="tour-shot">
+            <source type="image/webp" srcset="assets/media/storage-1600.webp">
+            <img src="assets/media/storage-1200.png" width="1600" height="1046" loading="lazy" alt="Internal storage selected: “Could be freed” lists app caches, Xcode build data, package caches and more, each with a Clean button.">
+          </picture>
+        </article>
+
+        <article class="tour-item">
+          <div class="tour-copy">
+            <h3>A health score for Bluetooth. <span class="pro-tag">Pro</span></h3>
+            <p>Signal, protocol, load, recent errors and companion software, scored with the same checks and thresholds as <code>bt-diagnostic.sh</code>, then turned into recommendations.</p>
+          </div>
+          <picture class="tour-shot">
+            <source type="image/webp" srcset="assets/media/bluetooth-1600.webp">
+            <img src="assets/media/bluetooth-1200.png" width="1600" height="1046" loading="lazy" alt="Bluetooth diagnostic: “Bluetooth health is good.” with an 81% score, recommendations and the paired devices.">
+          </picture>
+        </article>
+
+        <article class="tour-item">
+          <div class="tour-copy">
+            <h3>Prefer the native look? It is one switch away.</h3>
+            <p>The Native macOS appearance uses standard controls and follows light or dark mode and your accent colour. Switch in Settings (⌘,) or the View menu.</p>
+          </div>
+          <picture class="tour-shot">
+            <source type="image/webp" srcset="assets/media/native-1600.webp">
+            <img src="assets/media/native-1200.png" width="1600" height="1046" loading="lazy" alt="The Native macOS appearance in light mode: a standard sidebar, stat tiles, the audit list and the AirPods Pro inspector.">
+          </picture>
+        </article>
+
+        <article class="tour-item">
+          <div class="tour-copy">
+            <h3>Even silent gadgets get a name.</h3>
+            <p>A charge-only USB-C device shows up on its port as an unidentified accessory, and you can say what it is. Needs an Apple silicon Mac.</p>
+          </div>
+          <picture class="tour-shot">
+            <source type="image/webp" srcset="assets/media/silent-1600.webp">
+            <img src="assets/media/silent-1200.png" width="1600" height="1046" loading="lazy" alt="An unidentified accessory on USB-C port 2, with the note “Does not identify itself” and a “What is it?” field to name it.">
+          </picture>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <hr class="rule">
 
   <!-- How it works -->
@@ -177,6 +246,15 @@
       <div class="steps-cta">
         <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Muted 18-second loop of the overview, a fix guide and storage cleaning. No audio track. -->
+  <section class="reel" aria-labelledby="reel-title">
+    <div class="wrap">
+      <h2 id="reel-title" class="reel-title">Plugsquire in eighteen seconds</h2>
+      <video class="reel-video" src="assets/media/plugsquire-loop.mp4" poster="assets/media/plugsquire-loop-poster.jpg" width="1920" height="824" autoplay muted loop playsinline preload="metadata" aria-describedby="reel-desc"></video>
+      <p id="reel-desc" class="reel-desc">The overview, a finding's fix guide, and storage cleaning (Pro), on a silent loop.</p>
     </div>
   </section>
 
