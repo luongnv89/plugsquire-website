@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Plugsquire">
+  <title>Plugsquire</title>
+  <path d="M2.5,1.5 H13.5 V7.5 C13.5,10.6 11.2,12.9 8,14.5 C4.8,12.9 2.5,10.6 2.5,7.5 Z" fill="none" stroke="#C9A96A" stroke-width="1" stroke-linejoin="miter"/>
+  <path d="M5,4 H11 V7.5 C11,9.6 9.8,11 8,12 C6.2,11 5,9.6 5,7.5 Z M6,5 H7 V8 H6 Z M9,5 H10 V8 H9 Z" fill="#C9A96A" fill-rule="evenodd"/>
+</svg>

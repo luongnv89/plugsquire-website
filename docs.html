@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs: Getting started · Plugsquire</title>
+<meta name="description" content="Requirements, settings, first run, command-line flags and troubleshooting for Plugsquire.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Plugsquire home"><img src="assets/logo-site.svg" alt="Plugsquire" width="178" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="changelog.html">Changelog</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <div class="wrap">
+    <header class="doc-head">
+      <p class="motto">Plugsquire</p>
+      <h1>Docs: Getting started</h1>
+      <nav class="toc" aria-label="On this page">
+        <a href="#requirements">Requirements</a>
+        <a href="#install">Install</a>
+        <a href="#configure">Configure</a>
+        <a href="#first-run">First run</a>
+        <a href="#commands">Commands</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#uninstall">Uninstall</a>
+      </nav>
+    </header>
+
+    <h2 id="requirements">Requirements</h2>
+    <ul>
+      <li>macOS 14 or later.</li>
+      <li>An Apple silicon Mac, to detect power-only devices on USB-C ports. Everything else works on any Mac that runs macOS 14.</li>
+      <li>An internet connection is optional. It is used only for "Online details".</li>
+    </ul>
+
+    <h2 id="install">Install</h2>
+    <p>Plugsquire is in early access. <a href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an early build</a> by email.</p>
+    <p><span class="gap">[proof needed — install steps for the early-access build]</span></p>
+    <p>Plugsquire is not on the Mac App Store: the App Store sandbox blocks the hardware reads it depends on.</p>
+
+    <h2 id="configure">Configure</h2>
+    <table class="flags">
+      <thead><tr><th scope="col">Setting</th><th scope="col">Effect</th><th scope="col">Default</th><th scope="col">Where</th></tr></thead>
+      <tbody>
+        <tr><td>Appearance</td><td><em>Signature</em> is the app's own dark look. <em>Native macOS</em> uses the standard split view, sidebar, toolbar and grouped forms, and follows the system's light or dark mode and accent colour.</td><td>Signature</td><td>Settings (⌘,), the View menu (⌥⌘1 / ⌥⌘2), or the sidebar</td></tr>
+        <tr><td>Online details</td><td>Looks up model and maker names online, and downloads product photos. Off: no lookups and no downloads; stored details are still shown.</td><td>On</td><td>Settings, or the sidebar</td></tr>
+        <tr><td>Full Disk Access</td><td>Lets the storage breakdown measure, and cleaning empty, the Trash and iPhone backups. Without it they show as "Not measured".</td><td>Not granted</td><td>System Settings, Privacy &amp; Security, Full Disk Access</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><p>Early builds are signed ad hoc, so a Full Disk Access grant does not survive an update to a new build. Grant it again after each update.</p></div>
+
+    <h2 id="first-run">First run</h2>
+    <ol>
+      <li>Open Plugsquire. It scans every bus at launch, again every two minutes, and whenever a USB device is plugged in or removed.</li>
+      <li>Read the list. Devices that need attention are flagged; observations that need no action are labelled "Nothing to fix".</li>
+      <li>Select a device to see its identity and findings. Each finding says what to do in one line, then gives numbered steps and its source.</li>
+      <li>Select the internal disk to see where its space goes. The breakdown is measured when you first open it, and again when you press "Measure again".</li>
+      <li>Open "Bluetooth" under Diagnostics to score the radio's health (Pro). It reads five minutes of logs, which takes a few seconds.</li>
+    </ol>
+    <p>Rescan at any time with ⌘R.</p>
+
+    <h2 id="commands">Commands</h2>
+    <p>The Plugsquire executable also runs without a window. Path to the executable in the installed app: <span class="gap">[proof needed — install path]</span></p>
+    <table class="flags">
+      <thead><tr><th scope="col">Flag</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>--report</code></td><td>Prints the inventory and the audit as text and quits. No window, and no network.</td></tr>
+        <tr><td><code>--report --online</code></td><td>The same, refreshing the public sources first.</td></tr>
+        <tr><td><code>--bluetooth</code></td><td>Prints the Bluetooth diagnostic as text. It reads five minutes of logs, which takes a few seconds.</td></tr>
+        <tr><td><code>--snapshot out.png</code></td><td>Renders the window to a PNG and quits.</td></tr>
+        <tr><td><code>--select "name"</code></td><td>With <code>--snapshot</code>: selects the first device whose name contains <em>name</em>.</td></tr>
+        <tr><td><code>--filter attention|bluetooth</code></td><td>With <code>--snapshot</code>: shows the devices that need attention, or runs and shows the Bluetooth diagnostic.</td></tr>
+        <tr><td><code>--scroll "Connected now"</code></td><td>With <code>--snapshot</code>: scrolls the overview to that section.</td></tr>
+        <tr><td><code>--style native</code></td><td>With <code>--snapshot</code>: renders the Native macOS appearance.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <ul>
+      <li><strong>The Trash or iPhone backups show "Not measured", or a total reads "At least".</strong> Grant Plugsquire Full Disk Access, then press "Measure again".</li>
+      <li><strong>A Bluetooth or power-only device change is not shown yet.</strong> These are picked up by the two-minute rescan. Press ⌘R to rescan now.</li>
+      <li><strong>A device shows no maker.</strong> A Bluetooth device can announce any vendor ID, so Plugsquire names a maker only when something else agrees. Type the maker in yourself.</li>
+      <li><strong>Some product photos or descriptions are missing.</strong> When Wikipedia limits requests, Plugsquire waits, stops asking for that pass, and tries the remaining names on the next rescan.</li>
+      <li><strong>Deleted space does not show as free yet.</strong> macOS may keep it in a local Time Machine snapshot for a few minutes.</li>
+      <li><strong>A drive will not eject.</strong> macOS refused, for example because the drive is in use. Plugsquire shows the reason macOS gave.</li>
+    </ul>
+
+    <h2 id="uninstall">Uninstall</h2>
+    <p>Delete the app, then delete <code>~/Library/Application Support/Plugsquire/</code> and <code>~/Library/Caches/Plugsquire/</code> to remove the stored details and cached answers.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="foot-brand" href="index.html"><img src="assets/favicon.svg" alt="" width="22" height="22">Plugsquire</a>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="docs.html" aria-current="page">Docs</a>
+      <a href="mailto:contact@luongnv.com?subject=Plugsquire">contact@luongnv.com</a>
+    </nav>
+  </div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

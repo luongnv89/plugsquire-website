@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plugsquire · Know whether everything plugged into your Mac is healthy</title>
+<meta name="description" content="Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems. Each finding comes with its evidence and the fix.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Plugsquire">
+<meta property="og:description" content="Know whether everything plugged into your Mac is healthy.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://plugsquire.luongnv.com/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Plugsquire home"><img src="assets/logo-site.svg" alt="Plugsquire" width="178" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="#checks">What it checks</a>
+      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-link" href="docs.html">Docs</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="motto reveal reveal-1">Everything in your Mac's company.</p>
+        <h1 id="hero-title" class="reveal reveal-2">Know whether everything plugged into your Mac is healthy</h1>
+        <p class="lead reveal reveal-3">Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems. Each finding comes with its evidence and the fix.</p>
+        <div class="hero-ctas reveal reveal-4">
+          <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg>
+            Request an Early Build</a>
+          <a class="btn btn-ghost" href="#checks">See What It Checks</a>
+        </div>
+        <ul class="trust reveal reveal-5" aria-label="At a glance">
+          <li>Native macOS app</li>
+          <li>No root access, no private APIs, no helper daemon</li>
+          <li>Serial numbers never leave your Mac</li>
+        </ul>
+      </div>
+
+      <!-- Decorative: the buses Plugsquire reads, drawn as a roll. Not a screenshot of the app. -->
+      <div class="roll" aria-hidden="true">
+        <div class="roll-head"><img src="assets/logo-icon.svg" alt=""><span>Plugsquire</span></div>
+        <ol>
+          <li>USB, with its hub tree<span class="dot"></span></li>
+          <li>Bluetooth, connected and remembered<span class="dot"></span></li>
+          <li>Thunderbolt<span class="dot"></span></li>
+          <li>Displays<span class="dot"></span></li>
+          <li>Storage<span class="dot"></span></li>
+          <li>Power adapter<span class="dot"></span></li>
+          <li>Internal battery<span class="dot"></span></li>
+          <li>Cameras<span class="dot"></span></li>
+          <li>Audio<span class="dot"></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Problem -->
+  <section aria-labelledby="problem-title">
+    <div class="wrap split">
+      <div class="section-head">
+        <h2 id="problem-title">Your Mac knows what's wrong. It just doesn't say.</h2>
+        <p class="lead">macOS spreads what it knows about your devices across System Information, Bluetooth settings, Disk Utility and the battery menu, and it rarely tells you when one of them has a problem.</p>
+      </div>
+      <ul class="scenes">
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 15h4"/><circle cx="16.5" cy="12" r="1.2" fill="currentColor"/></svg></span>
+          <p>An external SSD copies slowly, and nothing tells you it negotiated a slow USB link.</p>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 5 13h6l-1 9 8-11h-6z"/></svg></span>
+          <p>Your Mac charges slowly through a hub, and nothing shows the power it asked for next to the power it got.</p>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg></span>
+          <p>Your AirPods run outdated firmware, and a Bluetooth mouse keeps dropping out. The clues sit in reports and logs you never open.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Agitate -->
+  <section class="agitate" aria-labelledby="agitate-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="agitate-title">Left alone, it all looks like a slow Mac.</h2>
+      </div>
+      <div class="costs">
+        <p>You blame the drive, the cable or the Mac, and replace a part that works.</p>
+        <p>A disk whose S.M.A.R.T. status reports failing keeps holding files you have no other copy of.</p>
+        <p>Caches, build data and old backups fill the internal disk until macOS warns you it is full.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section id="checks" aria-labelledby="checks-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="checks-title">One list. Every bus. A verdict on each device.</h2>
+        <p class="lead">Plugsquire reads your Mac's own system report and puts every connected device in one list: what it is, how it is connected, and whether anything needs your attention.</p>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="9" r="4"/><path d="M22 13v8M10 29v-4h24v4M22 21v4"/><rect x="5" y="29" width="10" height="8" rx="1.5"/><rect x="17" y="29" width="10" height="8" rx="1.5"/><rect x="29" y="29" width="10" height="8" rx="1.5"/></svg></span>
+          <h3>Every bus in one inventory</h3>
+          <p>USB with its hub tree, Bluetooth (connected and remembered), Thunderbolt, displays, storage, the power adapter, the internal battery, cameras and audio.</p>
+        </article>
+        <article class="feature">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="9" width="32" height="26" rx="3"/><circle cx="16" cy="20" r="4"/><path d="M10 30c1.5-3 3.5-4.5 6-4.5s4.5 1.5 6 4.5M26 17h8M26 22h8M26 27h5"/></svg></span>
+          <h3>Identity you can check</h3>
+          <p>Vendor and product IDs, serial, firmware, negotiated link speed, power granted versus power wanted, and the battery level of each component.</p>
+        </article>
+        <article class="feature">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6h26v13c0 9-6 15-13 19C15 34 9 28 9 19z"/><path d="m16 21 4.5 4.5L29 17"/></svg></span>
+          <h3>An audit that ends in a fix</h3>
+          <p>Low or worn batteries, outdated AirPods firmware, drives on a slow USB link, slow charging through a hub, failing S.M.A.R.T. status, low disk space, weak Bluetooth signal. Each finding names its evidence, gives numbered steps, and opens the right System Settings pane where one exists.</p>
+        </article>
+        <article class="feature">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="14" y="4" width="16" height="12" rx="3"/><path d="M18 16v6h8v-6M22 22v6"/><path d="M22 28c0 6-5 6-9 10M22 28c0 6 5 6 9 10" stroke-dasharray="2 3"/><circle cx="22" cy="10" r="1.5" fill="currentColor"/></svg></span>
+          <h3>Silent devices, found</h3>
+          <p>A shaver or a lamp charging over USB-C sends no data, so it never appears in the USB list. Plugsquire reads the port controller, shows it on its port as an unidentified accessory, and lets you name it.</p>
+        </article>
+        <article class="feature">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 6a16 16 0 1 0 16 16H22z"/><path d="M26 4a14 14 0 0 1 14 14H26z"/></svg></span>
+          <h3>Space you can take back</h3>
+          <p>See where the internal disk's space goes by category, how much could be freed, and how safe each category is to clear.</p>
+        </article>
+      </div>
+      <p class="versus">System Information shows raw reports, one section at a time. Plugsquire joins them, explains them and tells you what to do, using only public macOS interfaces: no root access, no private APIs, no helper daemon.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- How it works -->
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg></span>
+          <h3>Open Plugsquire.</h3>
+          <p>It scans every bus at launch, again every two minutes, and whenever a USB device is plugged in or removed.</p>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3h16v8c0 5.5-3.6 9-8 11-4.4-2-8-5.5-8-11z"/><path d="M12 8v5M12 16v.5"/></svg></span>
+          <h3>Read the list.</h3>
+          <p>Devices that need attention are flagged; observations that need no action are labelled "Nothing to fix".</p>
+        </li>
+        <li>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L3 18l3 3 6.4-6.4a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+          <h3>Follow the fix.</h3>
+          <p>Each finding says what to do in one line, then gives numbered steps and its source.</p>
+        </li>
+      </ol>
+      <div class="steps-cta">
+        <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section aria-label="Proof">
+    <div class="wrap">
+      <div class="proof-grid">
+        <figure class="quote" style="margin:0">
+          <span class="mark" aria-hidden="true">“</span>
+          <blockquote style="margin:0"><p><span class="gap">[proof needed — quote, name and role of a Plugsquire user]</span></p></blockquote>
+        </figure>
+        <div class="note">
+          <p>The storage categories and age rules follow <a href="https://github.com/luongnv89/mdoctor">mdoctor</a>, an open-source Mac health tool.</p>
+          <p>The Bluetooth diagnostic runs the same checks, thresholds and score as the <code>bt-diagnostic.sh</code> script it was ported from.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Pricing -->
+  <section id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pricing-title">Pricing</h2>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Device inventory and identity</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Online details</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Audit and fix guides</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Silent devices</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Eject and mount external drives</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Storage breakdown</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Signature and Native macOS appearances</span></li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <span class="tag">Recommended</span>
+          <h3>Pro</h3>
+          <p class="price">$4.99<small>one-time</small></p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Everything in Free</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Storage cleaning: review exactly what goes, then clean one category at a time</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Bluetooth diagnostic: a health score for the radio, with recommendations</span></li>
+          </ul>
+          <p class="fine">One payment for the version you buy and the updates published for it. Not a subscription.</p>
+        </div>
+      </div>
+      <div class="pricing-notes">
+        <p>Until the licence check ships, early builds have every Pro feature turned on.</p>
+        <p><span class="gap">[proof needed — refund policy]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title">FAQ</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What does Plugsquire send over the internet?</summary>
+          <p>Only a public model name and a maker name, to look up product details. Serial numbers, Bluetooth addresses, volume names and the names you give devices stay on your Mac. Turn "Online details" off and the app works offline with its bundled data.</p>
+        </details>
+        <details>
+          <summary>Which Macs does it run on?</summary>
+          <p>Macs running macOS 14 or later. Spotting power-only devices on USB-C ports needs an Apple silicon Mac.</p>
+        </details>
+        <details>
+          <summary>Does it need admin rights or a helper?</summary>
+          <p>No. It uses no root access, no private APIs and no helper daemon. Full Disk Access is optional: without it, the Trash and iPhone backups show as "Not measured".</p>
+        </details>
+        <details>
+          <summary>Will storage cleaning delete something I need?</summary>
+          <p>Nothing is removed until you press Clean for a category and confirm the exact list. Xcode archives and iPhone backups go to the Trash, so you can put them back. Cleaning stays inside that category's folders in your home folder, and out of Desktop, Documents, Downloads, Pictures, iCloud and Mail.</p>
+        </details>
+        <details>
+          <summary>Can it update my devices' firmware?</summary>
+          <p>No. It tells you when AirPods firmware is out of date, using Apple's published list. Other makers publish no common feed, so their devices show the installed version without a verdict.</p>
+        </details>
+        <details>
+          <summary>Why isn't it on the Mac App Store?</summary>
+          <p>The App Store sandbox blocks the hardware reads Plugsquire depends on, so it is distributed outside the store.</p>
+        </details>
+        <details>
+          <summary>Is Pro a subscription?</summary>
+          <p>No. Pro is a one-time $4.99 payment for the version you buy and the updates published for it.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Final CTA -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <img class="crest" src="assets/logo-mark.svg" alt="" width="72" height="72">
+      <h2 id="final-title">See everything your Mac is keeping company with.</h2>
+      <p>The core app is free. Pro is a one-time $4.99, with no subscription.</p>
+      <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="foot-brand"><img src="assets/favicon.svg" alt="" width="22" height="22">Plugsquire</span>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="docs.html">Docs</a>
+      <a href="mailto:contact@luongnv.com?subject=Plugsquire">contact@luongnv.com</a>
+    </nav>
+  </div>
+</footer>
+<!--/email_off-->
+</body>
+</html>
