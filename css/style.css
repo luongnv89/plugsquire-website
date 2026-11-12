@@ -63,7 +63,8 @@ body::before {
     linear-gradient(rgba(243, 239, 231, 0.025) 1px, transparent 1px) 0 0 / 100% 48px;
 }
 
-img, svg { display: block; max-width: 100%; }
+img, svg, video, picture { display: block; max-width: 100%; }
+video { height: auto; }
 a { color: var(--gold); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { color: var(--gold-soft); }
 :focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; border-radius: 2px; }
