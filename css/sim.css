@@ -305,20 +305,49 @@ button.sim-row:hover { background: rgba(255,255,255,.025); }
 }
 
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.hero-tight { padding-bottom: 32px; }
 .sim-ctl { display: grid; gap: 8px; }
 
-/* Feature index under the demo */
-.fx-groups { display: grid; gap: 48px; }
-.fx-group h3.fx-title { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-family: var(--sans); font-weight: 600; margin: 0 0 16px; }
-.fx-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.fx { padding: 20px 22px 22px 0; border-bottom: 1px solid var(--line); display: grid; align-content: start; gap: 6px; }
-.fx:not(:nth-child(3n+1)) { padding-left: 22px; border-left: 1px solid var(--line); }
-.fx h4 { margin: 0; font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--ink); line-height: 1.3; }
-.fx p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.fx .show { justify-self: start; margin-top: 6px; background: none; border: 0; padding: 0; color: var(--gold); font: 500 14px var(--sans); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.fx .show:hover { color: var(--gold-soft); }
+/* ---------- Home: the simulator is the whole page ---------- */
+.sim-pro { display: inline-block; vertical-align: middle; margin-left: 6px; font: 600 9px/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--w-accent); border: 1px solid currentColor; border-radius: 4px; padding: 1px 4px; flex: none; }
+.play { padding: 18px 0 28px; }
+.is-play .site-header .wrap { max-width: 1680px; }
+.play-wrap { width: 100%; max-width: 1680px; margin: 0 auto; padding: 0 var(--gutter); }
+.play-bar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-bottom: 14px; }
+.play-bar h1 { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.2; letter-spacing: -.01em; }
+.play-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; }
+.play .sim-desk { padding: 18px 20px 20px; }
+/* Fill the viewport under the header, the title line and the simulated menu bar; never shorter than 540px. */
+.play .sim-win { height: clamp(540px, calc(100vh - 236px), 1000px); height: clamp(540px, calc(100dvh - 236px), 1000px); }
+
+/* The rail beside the window: what the scene shows, the tour controls, every scene. It takes the window's height. */
+.play-rail { position: relative; min-width: 0; }
+.play-rail-inner { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 14px; }
+.play .sim-caption { display: block; margin: 0; min-height: 0; flex: none; }
+.play .sim-caption h2 { font-size: 20px; line-height: 1.25; margin: 0 0 6px; }
+.play .sim-caption p { font-size: 15px; }
+.play .sim-ctl { grid-template-columns: 1fr 1fr; flex: none; }
+.play .sim-play { min-width: 0; }
+.rail-h { font: 600 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 6px 0 0; flex: none; }
+.play .sim-chips { flex: 1 1 auto; min-height: 0; overflow-y: auto; align-content: flex-start; scrollbar-width: thin; gap: 6px; }
+.play .sim-chips button { padding: 5px 10px; font-size: 12.5px; }
+.rail-cta { flex: none; display: grid; gap: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+.rail-cta p { font-size: 13px; color: var(--muted); }
+
+@media (max-width: 1180px) {
+  .play-grid { grid-template-columns: minmax(0, 1fr); }
+  .play-rail-inner { position: static; }
+  .play .sim-chips { overflow: visible; }
+  .rail-cta { justify-items: start; }
+}
 @media (max-width: 900px) {
-  .fx-grid { grid-template-columns: 1fr; }
-  .fx, .fx:not(:nth-child(3n+1)) { padding: 18px 0; border-left: 0; }
+  .play { padding-top: 12px; }
+  .play-wrap { padding: 0 10px; }
+  .play .sim-desk { padding: 10px 8px 12px; }
+  .play-bar h1 { font-size: 21px; }
+  .play-bar .sim-disclaimer { font-size: 12px; }
+  /* Two-row header plus the title line sit above the window on phones. */
+  .play .sim-win { height: clamp(460px, calc(100vh - 290px), 780px); height: clamp(460px, calc(100dvh - 290px), 780px); }
+}
+@media (max-width: 960px) {
+  #sim, #demo { scroll-margin-top: 112px; }
 }
