@@ -7,7 +7,7 @@
 <meta name="description" content="What is new in each Plugsquire release.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=20261112b">
+<link rel="stylesheet" href="css/style.css?v=20261125">
 </head>
 <body>
 <!--email_off-->
@@ -19,7 +19,7 @@
     <nav class="nav" aria-label="Main">
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="docs.html">Docs</a>
-      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
     </nav>
   </div>
 </header>
@@ -31,6 +31,57 @@
       <h1>Changelog</h1>
       <p class="summary">What changed in each release, newest first.</p>
     </header>
+
+    <article class="release" id="next">
+      <h2>Next beta (in testing)</h2>
+      <p class="when"><span class="gap">[proof needed — version number and release date]</span></p>
+
+      <h3>New</h3>
+      <ul>
+        <li>Watch your Mac from the menu bar: the icon follows the most serious finding, and its menu lists what needs attention and each accessory's battery.</li>
+        <li>Get a notification once when a problem starts, such as a low battery, low disk space, a drive on a slow USB link, or a device connecting for the first time.</li>
+        <li>See every other device on your local network, grouped by kind, with its maker, model and the services it announces (Pro).</li>
+        <li>Check this Mac, its accessories and the devices on your network for published vulnerabilities, with the ones exploited in attacks first and the update that fixes them (Pro).</li>
+        <li>Check one network device's open ports when you choose to, and see your Wi-Fi network's signal, channel and security next to the networks nearby (Pro).</li>
+        <li>Find what fills your disk on a map, and move large or long-unchanged files to the Trash after reviewing them (Pro).</li>
+        <li>Remove an app together with the files it left in your Library (Pro).</li>
+        <li>Look back at what connected and disconnected in a searchable connection history.</li>
+        <li>Keep an eye on accessory batteries with a small and a medium desktop widget.</li>
+        <li>Let Plugsquire update itself, always after asking you, and open it at login.</li>
+        <li>With ssh-fleet-monitor installed separately, see your servers' health and risk next to your Mac.</li>
+      </ul>
+
+      <h3>Improved</h3>
+      <ul>
+        <li>Downloaded releases open on the first launch, also offline: they are signed with a Developer ID and notarized by Apple.</li>
+        <li>Remembered AirPods and other Bluetooth devices keep their last known battery levels, marked with how old they are.</li>
+        <li>More devices on the local network are named instead of listed as unknown.</li>
+        <li>Settings › Alerts shows which alert each threshold belongs to.</li>
+      </ul>
+
+      <h3>Fixed</h3>
+      <ul>
+        <li>A local network scan is no longer reported as refused when you allow access while it runs.</li>
+        <li>Low battery and low disk space alerts arrive once, even when a reading hovers at the threshold.</li>
+        <li>Clicking an alert while Plugsquire is closed now opens the device it is about.</li>
+      </ul>
+    </article>
+
+    <article class="release" id="v0-1-0-beta-3">
+      <h2>0.1.0-beta.3 (early access)</h2>
+      <p class="when">15 November 2026</p>
+
+      <h3>New</h3>
+      <ul>
+        <li>Find the Git worktrees under a folder and delete the ones Git confirms have nothing uncommitted and nothing unpushed (Pro).</li>
+      </ul>
+
+      <h3>Improved</h3>
+      <ul>
+        <li>Plugsquire asks for Full Disk Access only when a feature needs it, and names what it could not read.</li>
+        <li>After a clean, only the cleaned category is measured again, so the storage breakdown updates sooner.</li>
+      </ul>
+    </article>
 
     <article class="release" id="v0-1-0-beta-2">
       <h2>0.1.0-beta.2 (early access)</h2>

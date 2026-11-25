@@ -8,7 +8,7 @@
 <meta name="description" content="What the Plugsquire app and this website collect, send and store.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=20261112b">
+<link rel="stylesheet" href="css/style.css?v=20261125">
 </head>
 <body>
 <!--email_off-->
@@ -20,7 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="docs.html">Docs</a>
-      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
     </nav>
   </div>
 </header>
@@ -30,8 +30,8 @@
     <header class="doc-head">
       <p class="motto">Plugsquire</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective date: 12 November 2026</p>
-      <p class="summary">Plugsquire runs on your Mac. It has no account and no server of its own. When "Online details" is on, the app sends a public model name and a maker name to four public reference sources; nothing else leaves your Mac. This website sets no cookies and runs no analytics.</p>
+      <p class="meta">Effective date: 25 November 2026</p>
+      <p class="summary">Plugsquire runs on your Mac. It has no account and no server of its own. With "Online details" on, the app sends public model and maker names to public reference sources; the security check sends product names and your macOS and Safari version numbers to the National Vulnerability Database; an update check asks this website for the list of versions. Serial numbers, Bluetooth addresses, volume names and the names you give your devices never leave your Mac. This website sets no cookies and runs no analytics.</p>
     </header>
 
     <h2 id="collect">1. Information we collect</h2>
@@ -39,9 +39,13 @@
     <p>The app reads, on your Mac, the system report for every connected device: names, vendor and product IDs, serial numbers, firmware versions, link speeds, power figures, battery levels and Bluetooth addresses. It also stores the names you give devices and the list of devices you removed from the list (as device IDs only), in the app's preferences on your Mac.</p>
     <p>The storage breakdown reads file sizes and dates only, from a fixed list of folders, on your Mac. It never opens a file's contents.</p>
     <p>The Bluetooth diagnostic reads the Bluetooth report, the last five minutes of the Bluetooth and HID system logs, the running process list and the Magic Mouse button setting, on your Mac. Nothing it reads is stored or sent anywhere.</p>
+    <p>The local network screen listens to what devices on your network announce and reads your Mac's own table of neighbours. To name the devices it finds, it asks for each neighbour's name with a reverse lookup, over mDNS (answered only by devices on your network) and of your router when it is the default gateway at a private address; it may fetch the description a device itself points to at its own local address; and the optional "Knock on every address" switch, off at every launch, sends one small packet to each address of your own network. No address is sent to any other server. Names, addresses and hardware addresses are not stored, except a device's maker and model, which the security check looks up. The open-port check connects to one device's ports only after you start it and confirm a warning; its result stays on screen only.</p>
+    <p>The Wi-Fi screen reads your Mac's Wi-Fi interface and the networks nearby. macOS hands over network names and the router's hardware address only when Plugsquire may use Location Services; Plugsquire never reads where your Mac is.</p>
+    <p>The Git worktree cleanup, the disk map and the large and old file finder read folder listings, file sizes and dates under the folder you choose. The app uninstaller reads the apps in your Applications folders and the files they left in your Library. None of them opens a file's contents, and nothing is deleted or moved before you confirm.</p>
+    <p>The connection history (each device's name, maker, bus, port, speed and the times it connected and disconnected) and the battery widget's data are stored on your Mac only. With the optional ssh-fleet-monitor plugin, Plugsquire reads that program's report on your Mac and never connects to your hosts.</p>
     <p>None of this is sent to us. We have no server that could receive it.</p>
     <h3>On this website</h3>
-    <p>We collect nothing through this website. If you email <a href="mailto:contact@luongnv.com?subject=Plugsquire%20privacy">contact@luongnv.com</a>, for example to request an early build, we receive your email address and your message.</p>
+    <p>We collect nothing through this website. If you email <a href="mailto:contact@luongnv.com?subject=Plugsquire%20privacy">contact@luongnv.com</a>, for example to request early access, we receive your email address and your message.</p>
 
     <h2 id="use">2. How we use it</h2>
     <ul>
@@ -51,7 +55,7 @@
     </ul>
 
     <h2 id="cookies">3. Cookies and analytics</h2>
-    <p>The app contains no analytics or tracking. This website sets no cookies, loads no analytics, and makes no requests to third-party servers: no web fonts, no scripts, no embedded content.</p>
+    <p>The app contains no analytics or tracking. This website sets no cookies, loads no analytics, and makes no requests to third-party servers: no web fonts, no third-party scripts, no embedded content. Its one script, the live demo, runs in your browser with sample data and stores nothing.</p>
 
     <h2 id="sharing">4. Sharing and processors</h2>
     <p>When "Online details" is on (the default), the app sends a public model name (an owner prefix such as "Sam's" is removed first) and a maker name to:</p>
@@ -60,6 +64,9 @@
       <li><strong>Wikipedia</strong> and <strong>Wikidata</strong>, for a product photo, description, release date and company profile.</li>
       <li><strong>Apple Support</strong>, for the latest firmware and release history.</li>
     </ul>
+    <p>When "Online details" is on, the app also downloads the IEEE's public table of MAC address blocks, at most once a month, to name a network chip's maker on your Mac. No address is sent to look it up.</p>
+    <p>The <strong>security check</strong> sends the <strong>National Vulnerability Database</strong> (NIST) product names only: your Mac's macOS and Safari version numbers, an accessory's public maker and model, and a network device's maker and model as the device announces them. Device names, addresses, hardware addresses, serial numbers and names you typed are never sent.</p>
+    <p>An <strong>update check</strong> is one request to this website for the list of versions, sent with a user agent naming Plugsquire's and Sparkle's version numbers. No system profile is sent. Updates are downloaded from GitHub. Automatic checks happen once a day only if you turned them on.</p>
     <p>Generic names (such as "USB3.1 Hub") are not looked up. A name or maker you type for a device is looked up too, because you entered it as a product name. Serial numbers, Bluetooth addresses, volume names and the names you gave your devices are never sent.</p>
     <p>This website is hosted on <strong>GitHub Pages</strong>. GitHub receives the standard request data your browser sends when you load a page, such as your IP address, and handles it under its own privacy statement.</p>
     <p>Email to contact@luongnv.com is forwarded by <strong>Cloudflare Email Routing</strong> to a <strong>Gmail</strong> inbox.</p>
@@ -67,7 +74,8 @@
     <h2 id="retention">5. Retention</h2>
     <ul>
       <li>Wikipedia and Wikidata details are stored in <code>~/Library/Application Support/Plugsquire/</code> after the first fetch and kept until you delete that folder. A name with no matching article is asked about again after 30 days.</li>
-      <li>Other answers are cached in <code>~/Library/Caches/Plugsquire/</code>: a day for the firmware list, a month for the USB ID Repository.</li>
+      <li>Other answers are cached in <code>~/Library/Caches/Plugsquire/</code>: a day for the firmware list and vulnerability answers, a month for the USB ID Repository, the IEEE table and vulnerability product names.</li>
+      <li>The connection history is kept for the period chosen in Settings (90 days by default, or 30 days or 1 year), at most 5,000 changes, and can be cleared from its screen.</li>
       <li>Your settings, device names and removed devices stay in the app's preferences on your Mac until you change them or remove the app.</li>
       <li>Emails: <span class="gap">[proof needed — how long emails are kept]</span></li>
     </ul>
@@ -75,6 +83,8 @@
     <h2 id="choices">6. Your choices</h2>
     <ul>
       <li>Turn "Online details" off in the app's settings to stop every lookup and image download. The app stays fully usable offline with its bundled data.</li>
+      <li>Turn off "Check for updates automatically" in Settings › Startup &amp; Updates to stop automatic update checks.</li>
+      <li>Location Services, Local Network access and Full Disk Access are asked for only when a feature needs them, and can be withdrawn in System Settings, Privacy &amp; Security.</li>
       <li>Delete <code>~/Library/Application Support/Plugsquire/</code> and <code>~/Library/Caches/Plugsquire/</code> to remove every stored detail.</li>
       <li>Email <a href="mailto:contact@luongnv.com?subject=Plugsquire%20privacy">contact@luongnv.com</a> to ask what we hold about you, or to have your emails deleted.</li>
     </ul>

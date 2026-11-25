@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plugsquire · Know whether everything plugged into your Mac is healthy</title>
-<meta name="description" content="Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems. Each finding comes with its evidence and the fix.">
+<meta name="description" content="Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems, each finding with its evidence and the fix. Try every feature in the live demo.">
 <meta name="theme-color" content="#0B0B0C">
 <meta property="og:title" content="Plugsquire">
-<meta property="og:description" content="Know whether everything plugged into your Mac is healthy.">
+<meta property="og:description" content="Know whether everything plugged into your Mac is healthy. Try every feature in the live demo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugsquire.luongnv.com/">
 <meta property="og:image" content="https://plugsquire.luongnv.com/assets/media/og-image.jpg">
@@ -16,7 +16,9 @@
 <meta property="og:image:alt" content="Plugsquire's overview window under the line “Everything in your Mac’s company.”">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=20261112b">
+<link rel="stylesheet" href="css/style.css?v=20261125">
+<link rel="stylesheet" href="css/sim.css?v=20261125">
+<script src="js/sim.js?v=20261125" defer></script>
 </head>
 <body>
 <!--email_off-->
@@ -26,21 +28,20 @@
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Plugsquire home"><img src="assets/logo-site.svg" alt="Plugsquire" width="178" height="40"></a>
     <nav class="nav" aria-label="Main">
-      <a class="nav-link" href="#checks">What it checks</a>
-      <a class="nav-link" href="#tour">Tour</a>
-      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link" href="#demo">Live demo</a>
+      <a class="nav-link" href="#features">Features</a>
       <a class="nav-link" href="#pricing">Pricing</a>
       <a class="nav-link" href="#faq">FAQ</a>
       <a class="nav-link" href="docs.html">Docs</a>
-      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-title">
+  <!-- Hero: kept short so the live demo sits right under it. -->
+  <section class="hero hero-tight" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="hero-title">
@@ -48,12 +49,12 @@
           <h1 id="hero-title" class="reveal reveal-2">Know whether everything plugged into your Mac is healthy</h1>
         </div>
         <div class="hero-side">
-        <p class="lead reveal reveal-3">Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems. Each finding comes with its evidence and the fix.</p>
+        <p class="lead reveal reveal-3">Plugsquire lists every device on every bus of your Mac, says what each one is, and checks it for problems, each finding with its evidence and the fix. It also maps your local network, matches your Mac against published vulnerabilities, and shows where your disk space goes.</p>
         <div class="hero-ctas reveal reveal-4">
-          <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">
+          <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg>
-            Request an Early Build</a>
-          <a class="btn btn-ghost" href="#checks">See What It Checks</a>
+            Request early access</a>
+          <a class="btn btn-ghost" href="#demo">Try the live demo</a>
         </div>
         <ul class="trust reveal reveal-5" aria-label="At a glance">
           <li>Native macOS app</li>
@@ -62,14 +63,38 @@
         </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- The app's overview window, captured with its own snapshot mode (Signature appearance). -->
-      <figure class="hero-shot reveal reveal-5">
-        <picture>
-          <source type="image/webp" srcset="assets/media/overview-1600.webp 1600w, assets/media/overview-2400.webp 2400w" sizes="(max-width: 1168px) 100vw, 1120px">
-          <img src="assets/media/overview-1200.png" width="1600" height="1046" alt="Plugsquire's overview: three things deserve your attention, seven devices connected, and the audit's findings, each with its device and severity." fetchpriority="high">
-        </picture>
-      </figure>
+  <!-- Live demo: the app's window, simulated with sample data (js/sim.js). -->
+  <section id="demo" class="sim-section" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="sim-head">
+        <div class="section-head">
+          <h2 id="demo-title">Try every feature here, with sample data.</h2>
+          <p class="lead">This is Plugsquire's window, simulated in your browser. Open a finding, clean storage, check a printer's ports, switch to the native look. Nothing on this page reads your Mac.</p>
+        </div>
+        <p class="sim-disclaimer">Simulation · sample devices and numbers</p>
+      </div>
+
+      <div id="sim" class="sim" hidden></div>
+      <noscript>
+        <figure class="hero-shot" style="margin:0">
+          <img src="assets/media/overview-1200.png" width="1600" height="1046" alt="Plugsquire's overview: three things deserve your attention, seven devices connected, and the audit's findings, each with its device and severity.">
+        </figure>
+        <p class="sim-disclaimer" style="margin-top:12px">The live demo needs JavaScript. This is a screenshot of the app's overview.</p>
+      </noscript>
+
+      <div class="sim-tour">
+        <ul id="sim-chips" class="sim-chips" aria-label="Demo scenes"></ul>
+        <div class="sim-caption" aria-live="polite">
+          <div class="sim-ctl">
+            <button id="sim-play" class="btn btn-ghost btn-sm sim-play" type="button">Play the tour</button>
+            <button id="sim-plug" class="btn btn-ghost btn-sm sim-play" type="button">Plug in a drive</button>
+          </div>
+          <div><h3 id="sim-cap-title">Click anything in the window.</h3><p id="sim-cap-text">Pick a scene above, press "Play the tour", or explore the sidebar yourself.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -113,108 +138,52 @@
     </div>
   </section>
 
-  <!-- Solution -->
-  <section id="checks" aria-labelledby="checks-title">
+  <!-- Solution: every feature, each linked to its scene in the demo. -->
+  <section id="features" aria-labelledby="features-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="checks-title">One list. Every bus. A verdict on each device.</h2>
-        <p class="lead">Plugsquire reads your Mac's own system report and puts every connected device in one list: what it is, how it is connected, and whether anything needs your attention.</p>
+        <h2 id="features-title">One app for everything around your Mac.</h2>
+        <p class="lead">Plugsquire reads your Mac's own system reports and joins them into one window: what is connected, what is wrong, and what to do about it. Each item below opens its scene in the demo.</p>
       </div>
-      <div class="features">
-        <article class="feature">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="9" r="4"/><path d="M22 13v8M10 29v-4h24v4M22 21v4"/><rect x="5" y="29" width="10" height="8" rx="1.5"/><rect x="17" y="29" width="10" height="8" rx="1.5"/><rect x="29" y="29" width="10" height="8" rx="1.5"/></svg></span>
-          <h3>Every bus in one inventory</h3>
-          <p>USB with its hub tree, Bluetooth (connected and remembered), Thunderbolt, displays, storage, the power adapter, the internal battery, cameras and audio.</p>
-        </article>
-        <article class="feature">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="9" width="32" height="26" rx="3"/><circle cx="16" cy="20" r="4"/><path d="M10 30c1.5-3 3.5-4.5 6-4.5s4.5 1.5 6 4.5M26 17h8M26 22h8M26 27h5"/></svg></span>
-          <h3>Identity you can check</h3>
-          <p>Vendor and product IDs, serial, firmware, negotiated link speed, power granted versus power wanted, and the battery level of each component.</p>
-        </article>
-        <article class="feature">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6h26v13c0 9-6 15-13 19C15 34 9 28 9 19z"/><path d="m16 21 4.5 4.5L29 17"/></svg></span>
-          <h3>An audit that ends in a fix</h3>
-          <p>Low or worn batteries, outdated AirPods firmware, drives on a slow USB link, slow charging through a hub, failing S.M.A.R.T. status, low disk space, weak Bluetooth signal. Each finding names its evidence, gives numbered steps, and opens the right System Settings pane where one exists.</p>
-        </article>
-        <article class="feature">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="14" y="4" width="16" height="12" rx="3"/><path d="M18 16v6h8v-6M22 22v6"/><path d="M22 28c0 6-5 6-9 10M22 28c0 6 5 6 9 10" stroke-dasharray="2 3"/><circle cx="22" cy="10" r="1.5" fill="currentColor"/></svg></span>
-          <h3>Silent devices, found</h3>
-          <p>A shaver or a lamp charging over USB-C sends no data, so it never appears in the USB list. Plugsquire reads the port controller, shows it on its port as an unidentified accessory, and lets you name it.</p>
-        </article>
-        <article class="feature">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 6a16 16 0 1 0 16 16H22z"/><path d="M26 4a14 14 0 0 1 14 14H26z"/></svg></span>
-          <h3>Space you can take back</h3>
-          <p>See where the internal disk's space goes by category, how much could be freed, and how safe each category is to clear.</p>
-        </article>
+      <div class="fx-groups">
+        <div class="fx-group">
+          <h3 class="fx-title">Devices</h3>
+          <div class="fx-grid">
+          <article class="fx"><h4>Every bus in one inventory</h4><p>USB with its hub tree, Bluetooth (connected and remembered), Thunderbolt, displays, storage, the power adapter, the internal battery, cameras and audio.</p><button class="show" type="button" data-show="overview">Show me in the demo</button></article>
+          <article class="fx"><h4>Identity you can check</h4><p>Vendor and product IDs, serial, firmware, negotiated link speed, power granted versus power wanted, and the battery level of each component.</p><button class="show" type="button" data-show="fix">Show me in the demo</button></article>
+          <article class="fx"><h4>An audit that ends in a fix</h4><p>Low or worn batteries, outdated firmware, drives on a slow USB link, slow charging, failing S.M.A.R.T. status, low disk space, weak Bluetooth signal. Each finding gives numbered steps and opens the right System Settings pane.</p><button class="show" type="button" data-show="fix">Show me in the demo</button></article>
+          <article class="fx"><h4>Silent devices, found</h4><p>A shaver or a lamp charging over USB-C sends no data, so it never appears in the USB list. Plugsquire reads the port controller and lets you name it.</p><button class="show" type="button" data-show="silent">Show me in the demo</button></article>
+          <article class="fx"><h4>Live, with alerts</h4><p>It rescans when a USB or Thunderbolt device comes or goes, and every two minutes. A notification arrives once when a problem starts.</p><button class="show" type="button" data-show="live">Show me in the demo</button></article>
+          <article class="fx"><h4>Eject and mount</h4><p>Eject an external drive with every volume on it, or mount a volume that is not mounted. If macOS refuses, you see its reason.</p><button class="show" type="button" data-show="eject">Show me in the demo</button></article>
+          <article class="fx"><h4>Connection history</h4><p>A searchable log of every device that connected or disconnected while Plugsquire was running, with its bus, port and link speed.</p><button class="show" type="button" data-show="history">Show me in the demo</button></article>
+          <article class="fx"><h4>Menu bar and battery widgets</h4><p>A menu bar icon that follows the most serious finding, and desktop widgets with each accessory's battery, per component.</p><button class="show" type="button" data-show="menubar">Show me in the demo</button></article>
+          <article class="fx"><h4>Two appearances</h4><p>Signature, the app's own dark look, or Native macOS, which follows the system's light or dark mode and accent colour.</p><button class="show" type="button" data-show="native">Show me in the demo</button></article>
+          </div>
+        </div>
+        <div class="fx-group">
+          <h3 class="fx-title">Network and security</h3>
+          <div class="fx-grid">
+          <article class="fx"><h4>Local network <span class="pro-tag">Pro</span></h4><p>Every other device on your network, grouped by kind, with its addresses, maker, model and the services it announces. Devices of unknown kind are listed, not hidden.</p><button class="show" type="button" data-show="network">Show me in the demo</button></article>
+          <article class="fx"><h4>Open-port check <span class="pro-tag">Pro</span></h4><p>Tries 16 common TCP ports on one device you pick, only after you confirm a warning. Never on its own, never on several devices at once.</p><button class="show" type="button" data-show="ports">Show me in the demo</button></article>
+          <article class="fx"><h4>Wi-Fi details <span class="pro-tag">Pro</span></h4><p>Signal, noise, channel, band, width, transmit rate, standard and security of your network, then the networks nearby, strongest first.</p><button class="show" type="button" data-show="wifi">Show me in the demo</button></article>
+          <article class="fx"><h4>Security check <span class="pro-tag">Pro</span></h4><p>Published vulnerabilities for your macOS and Safari versions, your accessories and your network devices, matched against the National Vulnerability Database, with the ones exploited in attacks first.</p><button class="show" type="button" data-show="security">Show me in the demo</button></article>
+          <article class="fx"><h4>Bluetooth diagnostic <span class="pro-tag">Pro</span></h4><p>A health score for the radio: each device's protocol, signal and battery, the load on the radio, and five minutes of error logs, turned into recommendations.</p><button class="show" type="button" data-show="bluetooth">Show me in the demo</button></article>
+          <article class="fx"><h4>SSH fleet (optional plugin)</h4><p>With ssh-fleet-monitor installed separately, the servers it watches show their health and risk next to your Mac's own data.</p><button class="show" type="button" data-show="fleet">Show me in the demo</button></article>
+          </div>
+        </div>
+        <div class="fx-group">
+          <h3 class="fx-title">Disk and apps</h3>
+          <div class="fx-grid">
+          <article class="fx"><h4>Storage breakdown</h4><p>Where the internal disk's space goes, by category, and how much each category could free, with how safe it is to clear.</p><button class="show" type="button" data-show="storage">Show me in the demo</button></article>
+          <article class="fx"><h4>Storage cleaning <span class="pro-tag">Pro</span></h4><p>Each category has a Clean button that lists exactly what it would remove and asks first. Archives and iPhone backups go to the Trash, so you can put them back.</p><button class="show" type="button" data-show="storage">Show me in the demo</button></article>
+          <article class="fx"><h4>Disk map <span class="pro-tag">Pro</span></h4><p>A map of a folder or the whole disk, drawn as rectangles sized by the space each folder or file takes. Click to look inside.</p><button class="show" type="button" data-show="diskmap">Show me in the demo</button></article>
+          <article class="fx"><h4>Large and old files <span class="pro-tag">Pro</span></h4><p>The files over a size you choose, or unchanged for a time you choose, sorted by size or date. Each is checked again before it goes to the Trash.</p><button class="show" type="button" data-show="files">Show me in the demo</button></article>
+          <article class="fx"><h4>App uninstaller <span class="pro-tag">Pro</span></h4><p>Remove an app together with the files it left in your Library. Files another installed app would use start unticked.</p><button class="show" type="button" data-show="apps">Show me in the demo</button></article>
+          <article class="fx"><h4>Git worktree cleanup <span class="pro-tag">Pro</span></h4><p>Finds the Git worktrees under a folder and lets you delete only the ones Git confirms have nothing uncommitted and nothing unpushed.</p><button class="show" type="button" data-show="worktrees">Show me in the demo</button></article>
+          </div>
+        </div>
       </div>
       <p class="versus">System Information shows raw reports, one section at a time. Plugsquire joins them, explains them and tells you what to do, using only public macOS interfaces: no root access, no private APIs, no helper daemon.</p>
-    </div>
-  </section>
-
-  <!-- Tour: real windows from the app's snapshot mode. Pro features are labelled; the app itself has no Pro UI. -->
-  <section id="tour" class="tour" aria-labelledby="tour-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="tour-title">A closer look</h2>
-        <p class="lead">Five screens from the app, from a finding's fix guide to the switch that makes Plugsquire look like any other Mac app.</p>
-      </div>
-
-      <div class="tour-list">
-        <article class="tour-item">
-          <div class="tour-copy">
-            <h3>Every finding tells you what to do.</h3>
-            <p>Open a device to see the evidence, what to do in one line, numbered steps where they help, and the source they come from.</p>
-          </div>
-          <picture class="tour-shot">
-            <source type="image/webp" srcset="assets/media/fix-guide-1600.webp">
-            <img src="assets/media/fix-guide-1200.png" width="1600" height="1046" loading="lazy" alt="AirPods Pro selected: a “Firmware is out of date” finding with what to do, seven numbered steps and its source, Apple Support.">
-          </picture>
-        </article>
-
-        <article class="tour-item">
-          <div class="tour-copy">
-            <h3>See where space goes. Free it safely. <span class="pro-tag">Pro</span></h3>
-            <p>The storage breakdown is free: each category, its size and how safe it is to clear. With Pro, Clean lists exactly what would go and asks before anything is removed.</p>
-          </div>
-          <picture class="tour-shot">
-            <source type="image/webp" srcset="assets/media/storage-1600.webp">
-            <img src="assets/media/storage-1200.png" width="1600" height="1046" loading="lazy" alt="Internal storage selected: “Could be freed” lists app caches, Xcode build data, package caches and more, each with a Clean button.">
-          </picture>
-        </article>
-
-        <article class="tour-item">
-          <div class="tour-copy">
-            <h3>A health score for Bluetooth. <span class="pro-tag">Pro</span></h3>
-            <p>Signal, protocol, load, recent errors and companion software, scored with the same checks and thresholds as <code>bt-diagnostic.sh</code>, then turned into recommendations.</p>
-          </div>
-          <picture class="tour-shot">
-            <source type="image/webp" srcset="assets/media/bluetooth-1600.webp">
-            <img src="assets/media/bluetooth-1200.png" width="1600" height="1046" loading="lazy" alt="Bluetooth diagnostic: “Bluetooth health is good.” with an 81% score, recommendations and the paired devices.">
-          </picture>
-        </article>
-
-        <article class="tour-item">
-          <div class="tour-copy">
-            <h3>Prefer the native look? It is one switch away.</h3>
-            <p>The Native macOS appearance uses standard controls and follows light or dark mode and your accent colour. Switch in Settings (⌘,) or the View menu.</p>
-          </div>
-          <picture class="tour-shot">
-            <source type="image/webp" srcset="assets/media/native-1600.webp">
-            <img src="assets/media/native-1200.png" width="1600" height="1046" loading="lazy" alt="The Native macOS appearance in light mode: a standard sidebar, stat tiles, the audit list and the AirPods Pro inspector.">
-          </picture>
-        </article>
-
-        <article class="tour-item">
-          <div class="tour-copy">
-            <h3>Even silent gadgets get a name.</h3>
-            <p>A charge-only USB-C device shows up on its port as an unidentified accessory, and you can say what it is. Needs an Apple silicon Mac.</p>
-          </div>
-          <picture class="tour-shot">
-            <source type="image/webp" srcset="assets/media/silent-1600.webp">
-            <img src="assets/media/silent-1200.png" width="1600" height="1046" loading="lazy" alt="An unidentified accessory on USB-C port 2, with the note “Does not identify itself” and a “What is it?” field to name it.">
-          </picture>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -226,35 +195,23 @@
       <div class="section-head">
         <h2 id="how-title">How it works</h2>
       </div>
-      <ol class="steps">
+      <ol class="steps steps-plain">
         <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg></span>
           <h3>Open Plugsquire.</h3>
           <p>It scans every bus at launch, again every two minutes, and whenever a USB device is plugged in or removed.</p>
         </li>
         <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3h16v8c0 5.5-3.6 9-8 11-4.4-2-8-5.5-8-11z"/><path d="M12 8v5M12 16v.5"/></svg></span>
           <h3>Read the list.</h3>
           <p>Devices that need attention are flagged; observations that need no action are labelled "Nothing to fix".</p>
         </li>
         <li>
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L3 18l3 3 6.4-6.4a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
           <h3>Follow the fix.</h3>
           <p>Each finding says what to do in one line, then gives numbered steps and its source.</p>
         </li>
       </ol>
       <div class="steps-cta">
-        <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+        <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Muted 18-second loop of the overview, a fix guide and storage cleaning. No audio track. -->
-  <section class="reel" aria-labelledby="reel-title">
-    <div class="wrap">
-      <h2 id="reel-title" class="reel-title">Plugsquire in eighteen seconds</h2>
-      <video class="reel-video" src="assets/media/plugsquire-loop.mp4" poster="assets/media/plugsquire-loop-poster.jpg" width="1920" height="824" autoplay muted loop playsinline preload="metadata" aria-describedby="reel-desc"></video>
-      <p id="reel-desc" class="reel-desc">The overview, a finding's fix guide, and storage cleaning (Pro), on a silent loop.</p>
     </div>
   </section>
 
@@ -287,13 +244,13 @@
           <h3>Free</h3>
           <p class="price">$0</p>
           <ul>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Device inventory and identity</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Online details</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Audit and fix guides</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Silent devices</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Eject and mount external drives</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Storage breakdown</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Signature and Native macOS appearances</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Device inventory, identity and online details</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Audit and fix guides</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Silent devices</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Eject and mount external drives</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Storage breakdown</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Connection history, menu bar, alerts and battery widgets</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Signature and Native macOS appearances</span></li>
           </ul>
         </div>
         <div class="plan pro">
@@ -301,9 +258,14 @@
           <h3>Pro</h3>
           <p class="price">$4.99<small>one-time</small></p>
           <ul>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Everything in Free</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Storage cleaning: review exactly what goes, then clean one category at a time</span></li>
-            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 8.5 3 3 7-7"/></svg><span>Bluetooth diagnostic: a health score for the radio, with recommendations</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Everything in Free</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Storage cleaning</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Bluetooth diagnostic</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Security check</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Local network, open-port check and Wi-Fi details</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Disk map with the large and old file finder</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>App uninstaller</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Git worktree cleanup</span></li>
           </ul>
           <p class="fine">One payment for the version you buy and the updates published for it. Not a subscription.</p>
         </div>
@@ -324,23 +286,23 @@
       <div class="faq">
         <details>
           <summary>What does Plugsquire send over the internet?</summary>
-          <p>Only a public model name and a maker name, to look up product details. Serial numbers, Bluetooth addresses, volume names and the names you give devices stay on your Mac. Turn "Online details" off and the app works offline with its bundled data.</p>
+          <p>With "Online details" on, a public model name and a maker name go to the USB ID Repository, Wikipedia and Wikidata, and Apple Support. The security check sends product names and your macOS and Safari version numbers to the National Vulnerability Database, and an update check asks this website for the list of versions. Serial numbers, Bluetooth addresses, volume names and the names you give devices never leave your Mac.</p>
         </details>
         <details>
           <summary>Which Macs does it run on?</summary>
-          <p>Macs running macOS 14 or later. Spotting power-only devices on USB-C ports needs an Apple silicon Mac.</p>
+          <p>Macs running macOS 14 or later, Apple silicon and Intel. Spotting power-only devices on USB-C ports needs an Apple silicon Mac.</p>
         </details>
         <details>
           <summary>Does it need admin rights or a helper?</summary>
-          <p>No. It uses no root access, no private APIs and no helper daemon. Full Disk Access is optional: without it, the Trash and iPhone backups show as "Not measured".</p>
+          <p>No. It uses no root access, no private APIs and no helper daemon. Full Disk Access is optional and asked for only when a feature needs it: without it, the Trash and iPhone backups show as "Not measured".</p>
         </details>
         <details>
-          <summary>Will storage cleaning delete something I need?</summary>
-          <p>Nothing is removed until you press Clean for a category and confirm the exact list. Xcode archives and iPhone backups go to the Trash, so you can put them back. Cleaning stays inside that category's folders in your home folder, and out of Desktop, Documents, Downloads, Pictures, iCloud and Mail.</p>
+          <summary>Will cleaning delete something I need?</summary>
+          <p>Nothing is removed until you confirm the exact list, and every item is checked again just before it goes. Xcode archives, iPhone backups, large files and uninstalled apps go to the Trash, so you can put them back. Cleaning stays out of Desktop, Documents, Downloads, Pictures, iCloud and Mail.</p>
         </details>
         <details>
-          <summary>Can it update my devices' firmware?</summary>
-          <p>No. It tells you when AirPods firmware is out of date, using Apple's published list. Other makers publish no common feed, so their devices show the installed version without a verdict.</p>
+          <summary>Does it scan my network's ports?</summary>
+          <p>Only when you ask. The local network screen listens to what devices announce. The open-port check runs on one device at a time, after you confirm a warning, and only on a private address inside your own Wi-Fi or Ethernet network.</p>
         </details>
         <details>
           <summary>Why isn't it on the Mac App Store?</summary>
@@ -362,7 +324,7 @@
       <img class="crest" src="assets/logo-mark.svg" alt="" width="72" height="72">
       <h2 id="final-title">See everything your Mac is keeping company with.</h2>
       <p>The core app is free. Pro is a one-time $4.99, with no subscription.</p>
-      <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      <a class="btn btn-primary" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
     </div>
   </section>
 

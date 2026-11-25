@@ -7,7 +7,7 @@
 <meta name="description" content="Requirements, settings, first run, command-line flags and troubleshooting for Plugsquire.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=20261112b">
+<link rel="stylesheet" href="css/style.css?v=20261125">
 </head>
 <body>
 <!--email_off-->
@@ -19,7 +19,7 @@
     <nav class="nav" aria-label="Main">
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="changelog.html">Changelog</a>
-      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an Early Build</a>
+      <a class="btn btn-primary btn-sm" href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a>
     </nav>
   </div>
 </header>
@@ -43,15 +43,15 @@
     <h2 id="requirements">Requirements</h2>
     <ul>
       <li>macOS 14 or later.</li>
-      <li>An Apple silicon Mac, to detect power-only devices on USB-C ports. Everything else is built to run on any Mac with macOS 14; Intel Macs are new in this beta and not yet tested on one, so please report problems.</li>
-      <li>An internet connection is optional. It is used only for "Online details".</li>
+      <li>Apple silicon or Intel. Detecting power-only devices on USB-C ports needs an Apple silicon Mac.</li>
+      <li>An internet connection is optional. It is used for "Online details", the security check and update checks.</li>
     </ul>
 
     <h2 id="install">Install</h2>
-    <p>Plugsquire is in early access. <a href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20send%20me%20an%20early%20build%20of%20Plugsquire.">Request an early build</a> by email.</p>
+    <p>Plugsquire is in early access. <a href="mailto:contact@luongnv.com?subject=Plugsquire%20early%20access&amp;body=Please%20add%20me%20to%20the%20Plugsquire%20early%20access%20list.">Request early access</a> by email.</p>
     <ol>
-      <li>Unzip <code>Plugsquire-0.1.0-beta.2.zip</code> and move <code>Plugsquire.app</code> to Applications, replacing any earlier beta.</li>
-      <li>Allow the first launch. The build is signed ad hoc and not notarized, so macOS blocks it. On macOS 15 or later, try to open the app, then go to System Settings, Privacy &amp; Security, and click "Open Anyway". On macOS 14, Control-click the app, choose Open, then Open again.</li>
+      <li>Unzip the build and move <code>Plugsquire.app</code> to Applications, replacing any earlier beta.</li>
+      <li>Open it. Builds after 0.1.0-beta.3 are signed with a Developer ID and notarized by Apple, so they open on the first launch. Builds up to 0.1.0-beta.3 are not: on macOS 15 or later, try to open the app, then go to System Settings, Privacy &amp; Security, and click "Open Anyway"; on macOS 14, Control-click the app, choose Open, then Open again.</li>
     </ol>
     <p>Plugsquire is not on the Mac App Store: the App Store sandbox blocks the hardware reads it depends on.</p>
 
@@ -61,10 +61,17 @@
       <tbody>
         <tr><td>Appearance</td><td><em>Signature</em> is the app's own dark look. <em>Native macOS</em> uses the standard split view, sidebar, toolbar and grouped forms, and follows the system's light or dark mode and accent colour.</td><td>Signature</td><td>Settings (⌘,), the View menu (⌥⌘1 / ⌥⌘2), or the sidebar</td></tr>
         <tr><td>Online details</td><td>Looks up model and maker names online, and downloads product photos. Off: no lookups and no downloads; stored details are still shown.</td><td>On</td><td>Settings, or the sidebar</td></tr>
-        <tr><td>Full Disk Access</td><td>Lets the storage breakdown measure, and cleaning empty, the Trash and iPhone backups. Without it they show as "Not measured".</td><td>Not granted</td><td>System Settings, Privacy &amp; Security, Full Disk Access</td></tr>
+        <tr><td>Full Disk Access</td><td>Lets the storage breakdown measure, and cleaning empty, the Trash and iPhone backups, and lets scans read folders macOS guards. Plugsquire asks only when a feature needs it.</td><td>Not granted</td><td>System Settings, Privacy &amp; Security, Full Disk Access</td></tr>
+        <tr><td>Local Network access</td><td>Lets the Local network screen find the other devices on your network. macOS asks the first time.</td><td>Asked on first use</td><td>System Settings, Privacy &amp; Security, Local Network</td></tr>
+        <tr><td>Location Services</td><td>Lets the Wi-Fi screen show network names and the router's hardware address. Plugsquire never reads where your Mac is.</td><td>Not allowed</td><td>"Allow Location access" on the Wi-Fi screen</td></tr>
+        <tr><td>Alerts</td><td>A notification once when a problem starts. Each alert can be turned off; the low battery and low disk space thresholds can be changed.</td><td>On; battery 20%, disk 10% free</td><td>Settings › Alerts</td></tr>
+        <tr><td>Open at login</td><td>Starts Plugsquire when you log in, in the menu bar.</td><td>Off</td><td>Settings › Startup &amp; Updates</td></tr>
+        <tr><td>Check for updates automatically</td><td>Checks once a day for a new version. Every update waits for your confirmation.</td><td>Asked on the second launch</td><td>Settings › Startup &amp; Updates</td></tr>
+        <tr><td>Include beta versions</td><td>Also offers beta versions.</td><td>Off</td><td>Settings › Startup &amp; Updates</td></tr>
+        <tr><td>ssh-fleet-monitor plugin</td><td>Shows the hosts sfm monitors, when sfm is installed separately.</td><td>On, when sfm is found</td><td>Settings › Plugins</td></tr>
       </tbody>
     </table>
-    <div class="callout"><p>Early builds are signed ad hoc, so a Full Disk Access grant does not survive an update to a new build. Grant it again after each update.</p></div>
+    <div class="callout"><p>Builds up to 0.1.0-beta.3 are signed ad hoc, so a Full Disk Access grant does not survive an update to a new build. Grant it again after updating from one of them.</p></div>
 
     <h2 id="first-run">First run</h2>
     <ol>
@@ -73,6 +80,7 @@
       <li>Select a device to see its identity and findings. Each finding says what to do in one line, then gives numbered steps and its source.</li>
       <li>Select the internal disk to see where its space goes. The breakdown is measured when you first open it, and again when you press "Measure again".</li>
       <li>Open "Bluetooth" under Diagnostics to score the radio's health (Pro). It reads five minutes of logs, which takes a few seconds.</li>
+      <li>The other screens under Diagnostics are Local network, Wi-Fi, Security, Connection history, Git worktrees, Disk map, Large and old files, App uninstaller and, with the plugin, SSH fleet. The live demo on the home page shows each one.</li>
     </ol>
     <p>Rescan at any time with ⌘R.</p>
 
@@ -84,9 +92,11 @@
         <tr><td><code>--report</code></td><td>Prints the inventory and the audit as text and quits. No window, and no network.</td></tr>
         <tr><td><code>--report --online</code></td><td>The same, refreshing the public sources first.</td></tr>
         <tr><td><code>--bluetooth</code></td><td>Prints the Bluetooth diagnostic as text. It reads five minutes of logs, which takes a few seconds.</td></tr>
+        <tr><td><code>--security --online</code></td><td>Prints the security check as text. Add <code>--network</code> to check the local network too.</td></tr>
+        <tr><td><code>--network</code></td><td>Prints the devices on the local network as text. It listens a few seconds. Add <code>--sweep</code> to knock on every address, <code>--online</code> to allow the maker table download.</td></tr>
         <tr><td><code>--snapshot out.png</code></td><td>Renders the window to a PNG and quits.</td></tr>
         <tr><td><code>--select "name"</code></td><td>With <code>--snapshot</code>: selects the first device whose name contains <em>name</em>.</td></tr>
-        <tr><td><code>--filter attention|bluetooth</code></td><td>With <code>--snapshot</code>: shows the devices that need attention, or runs and shows the Bluetooth diagnostic.</td></tr>
+        <tr><td><code>--filter attention|bluetooth|worktrees|network|security|history|wifi|disk-map|large-files|uninstaller|ssh-fleet</code></td><td>With <code>--snapshot</code>: shows the devices that need attention, or that screen under Diagnostics.</td></tr>
         <tr><td><code>--scroll "Connected now"</code></td><td>With <code>--snapshot</code>: scrolls the overview to that section.</td></tr>
         <tr><td><code>--style native</code></td><td>With <code>--snapshot</code>: renders the Native macOS appearance.</td></tr>
       </tbody>
