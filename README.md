@@ -8,7 +8,10 @@ Live at https://plugsquire.luongnv.com/
 
 | File | Page |
 |------|------|
-| `index.html` | Landing page with the live demo |
+| `index.html` | Home: the live demo, full page. `index.html?scene=<id>` opens one scene (the ids are in `SCENES` in `js/sim.js`) |
+| `features.html` | Problem, every feature (each links to its scene in the demo), how it works |
+| `pricing.html` | Free and Pro plans |
+| `faq.html` | Frequently asked questions |
 | `privacy.html` | Privacy policy |
 | `terms.html` | Terms of use |
 | `changelog.html` | Release notes |
@@ -18,7 +21,7 @@ Shared styles live in `css/style.css`; the logo and favicon in `assets/`. The li
 
 ## Rules for this site
 
-- No third-party requests: no analytics, cookies, web fonts, CDNs or external scripts. The only JavaScript is the first-party live demo (`js/sim.js`), which stores nothing; without JavaScript the page shows a screenshot instead.
+- No third-party requests: no analytics, cookies, web fonts, CDNs or external scripts. The only JavaScript is the first-party live demo (`js/sim.js`), which stores nothing, and a small inline script in `index.html` that sends old `#features`, `#pricing` and `#faq` links to their pages. Without JavaScript the home page shows a screenshot instead.
 - Sample data in the demo is fictional: no real network names, addresses, hosts, paths or vulnerability IDs.
 - Bump the `?v=` query on the stylesheet and script links when they change, so cached copies are refreshed.
 - `appcast.xml` at the root is written by the app repository's release workflow. Do not edit or delete it.

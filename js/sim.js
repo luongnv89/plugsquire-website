@@ -267,13 +267,13 @@
     { v: 'bluetooth', label: 'Bluetooth', icon: 'bt', pro: true },
     { v: 'network', label: 'Local network', icon: 'net', pro: true },
     { v: 'wifi', label: 'Wi-Fi', icon: 'wifi', pro: true },
-    { v: 'security', label: 'Security', icon: 'shield', pro: true },
+    { v: 'security', label: 'Security', icon: 'shield' },
     { v: 'history', label: 'Connection history', icon: 'clock' },
     { v: 'worktrees', label: 'Git worktrees', icon: 'git', pro: true },
     { v: 'diskmap', label: 'Disk map', icon: 'map', pro: true },
     { v: 'files', label: 'Large and old files', icon: 'files', pro: true },
     { v: 'apps', label: 'App uninstaller', icon: 'app', pro: true },
-    { v: 'fleet', label: 'SSH fleet', icon: 'server' }]);
+    { v: 'fleet', label: 'SSH fleet', icon: 'server', pro: true }]);
 
   function sevDot(sev) { return '<span class="sev-dot sd-' + sev + '" aria-hidden="true">' + (sev === 'critical' ? '!' : sev === 'note' ? 'i' : sev === 'advisory' ? '!' : '') + '</span>'; }
   function findingRow(f, showDev) {
@@ -425,10 +425,10 @@
       '<h3 class="sim-h2">This Mac <small>macOS 15.1 · Safari 18.1 · exact verdict</small></h3><div class="sim-card"><div class="sim-row">' + sevDot('critical') + '<span class="body"><span class="t">4 vulnerabilities apply, 1 exploited in attacks</span><span class="d">CISA lists one as exploited, so it is sorted first. All 4 are fixed in macOS 15.2.</span></span></div>' +
       '<div class="sim-fix"><span class="one">Install the macOS update for this version.</span><ol><li>Open Software Update.</li><li>Install macOS 15.2, which fixes all 4.</li></ol><div class="sim-btns"><button class="sbtn" data-act="settings" data-arg="Open Software Update">Open Software Update</button></div></div>' +
       '<table class="sim-table" style="border-top:1px solid var(--w-line)"><tbody>' + macCves.map(function (c) { return '<tr><td class="mono">' + c[0] + '</td><td>' + c[1] + '</td><td class="m hide-sm">' + c[2] + '</td><td>' + (c[3] ? '<span class="badge" style="color:var(--w-red)">Exploited in attacks</span>' : '') + '</td></tr>'; }).join('') + '</tbody></table></div>' +
-      '<h3 class="sim-h2">Accessories</h3><div class="sim-list">' +
+      '<h3 class="sim-h2">Accessories <span class="sim-pro">Pro</span></h3><div class="sim-list">' +
       '<div class="sim-row">' + sevDot('ok') + '<span class="body"><span class="t">AirPods Pro</span><span class="d">No published vulnerability matches this model.</span></span></div>' +
       '<div class="sim-row">' + sevDot('note') + '<span class="body"><span class="t">USB Microphone</span><span class="d">Not checked: no catalog or USB ID Repository product name to look up.</span></span></div></div>' +
-      '<h3 class="sim-h2">Local network <small>checked when this screen opens</small></h3><div class="sim-list">' +
+      '<h3 class="sim-h2">Local network <span class="sim-pro">Pro</span> <small>checked when this screen opens</small></h3><div class="sim-list">' +
       '<div class="sim-row">' + sevDot('warning') + '<span class="body"><span class="t">Router · Kestrel AX3000</span><span class="d">3 vulnerabilities may apply to this model, 1 exploited in attacks. Its firmware version is not known, so it is not called vulnerable. Routers: install the latest firmware from the admin page, and turn off remote administration and UPnP if you do not use them.</span></span><span class="sev sev-warning">May apply</span></div>' +
       '<div class="sim-row">' + sevDot('advisory') + '<span class="body"><span class="t">Hallway Camera · Lumen Cam 2</span><span class="d">1 vulnerability may apply to this model. Cameras: update the firmware and change the default password.</span></span><span class="sev sev-advisory">May apply</span></div>' +
       '<div class="sim-row">' + sevDot('note') + '<span class="body"><span class="t">iPhone</span><span class="d">Not checked: the risk of Apple phones and tablets depends on an iOS version they do not share.</span></span></div>' +
@@ -439,8 +439,8 @@
     var q = S.histQuery.trim().toLowerCase();
     var rows = history().filter(function (r) { return !q || (r[2] + ' ' + r[3] + ' ' + r[4]).toLowerCase().indexOf(q) >= 0; });
     return topbar('Connection history') +
-      '<h2 class="sim-h1">What came and went.</h2><p class="sim-sub">Every connect and disconnect while Plugsquire was running, newest first. Kept only on this Mac.</p>' +
-      '<label class="sim-search" style="display:flex;width:100%;margin-bottom:12px">' + ic('search') + '<span class="visually-hidden">Search history</span><input type="search" placeholder="Search by device, maker or bus" data-input="histQuery" value="' + esc(S.histQuery) + '"></label>' +
+      '<h2 class="sim-h1">What came and went.</h2><p class="sim-sub">Every connect and disconnect while Plugsquire was running, newest first. Kept only on this Mac. The last 24 hours are free; older entries and search need Pro.</p>' +
+      '<label class="sim-search" style="display:flex;width:100%;margin-bottom:12px">' + ic('search') + '<span class="visually-hidden">Search history</span><input type="search" placeholder="Search by device, maker or bus" data-input="histQuery" value="' + esc(S.histQuery) + '"><span class="sim-pro">Pro</span></label>' +
       '<table class="sim-card sim-table"><thead><tr><th>Time</th><th>Device</th><th class="hide-sm">Bus</th><th class="hide-sm">Port</th><th class="hide-sm">Speed</th></tr></thead><tbody>' +
       (rows.length ? rows.map(function (r) { return '<tr><td class="m">' + esc(r[0]) + '</td><td><b style="font-weight:600">' + esc(r[2]) + '</b> <span style="color:' + (r[1] === 'Connected' ? 'var(--w-green)' : 'var(--w-faint)') + '">' + r[1].toLowerCase() + '</span><br><small style="color:var(--w-faint)">' + esc(r[3]) + '</small></td><td class="hide-sm">' + esc(r[4]) + '</td><td class="m hide-sm">' + esc(r[5]) + '</td><td class="m hide-sm">' + esc(r[6]) + '</td></tr>'; }).join('') : '<tr><td colspan="5" class="m">No change matches.</td></tr>') + '</tbody></table>';
   };
@@ -795,13 +795,13 @@
     { id: 'network', label: 'Local network', pro: true, title: 'Everything else on your network, by kind.', text: 'Computers, phones, printers, cameras, TVs, speakers, routers, storage and smart home devices, from what they announce. Unknown devices are listed, not hidden.', run: function () { reset(); go('network'); act('netsel', 'printer'); } },
     { id: 'ports', label: 'Open-port check', pro: true, title: 'Check one device’s open ports, on purpose.', text: 'It tries 16 common TCP ports on a single device you pick, only after you confirm a warning, and it can be stopped.', run: function () { reset(); go('network'); act('netsel', 'printer'); act('ports', 'printer'); } },
     { id: 'wifi', label: 'Wi-Fi', pro: true, title: 'Your Wi-Fi, measured.', text: 'Signal, noise and margin, channel, band, width, rate, standard and security, then the networks nearby, strongest first.', run: function () { reset(); go('wifi'); } },
-    { id: 'security', label: 'Security check', pro: true, title: 'Published vulnerabilities, matched to your Mac.', text: 'Your macOS and Safari versions are checked against the National Vulnerability Database, exploited ones first, with the update that fixes them. Network devices with an unknown firmware version show what may apply, never a false alarm.', run: function () { reset(); go('security'); } },
-    { id: 'history', label: 'Connection history', title: 'A searchable log of what came and went.', text: 'Every USB, Thunderbolt, Bluetooth and power-only device that connected or disconnected while Plugsquire was running, with time, bus, port and speed.', run: function () { reset(); go('history'); } },
+    { id: 'security', label: 'Security check', title: 'Published vulnerabilities, matched to your Mac.', text: 'Free for this Mac: your macOS and Safari versions are checked against the National Vulnerability Database, exploited ones first, with the update that fixes them. With Pro, accessories and network devices are checked too; those with an unknown firmware version show what may apply, never a false alarm.', run: function () { reset(); go('security'); } },
+    { id: 'history', label: 'Connection history', title: 'A log of what came and went.', text: 'Every USB, Thunderbolt, Bluetooth and power-only device that connected or disconnected while Plugsquire was running, with time, bus, port and speed. The last 24 hours are free; the full history and search are Pro.', run: function () { reset(); go('history'); } },
     { id: 'worktrees', label: 'Git worktrees', pro: true, title: 'Delete forgotten Git worktrees safely.', text: 'Only worktrees Git confirms have nothing uncommitted and nothing unpushed can be ticked. Tick the safe ones and delete them.', run: function () { reset(); go('worktrees'); } },
     { id: 'diskmap', label: 'Disk map', pro: true, title: 'A map of your disk, sized by space.', text: 'Rectangles sized by what each folder or file takes. Click a folder to look inside; Back takes you out.', run: function () { reset(); go('diskmap'); } },
     { id: 'files', label: 'Large and old files', pro: true, title: 'Find the big files and the forgotten ones.', text: 'Files over a size you choose, or unchanged for a time you choose, or both. Reveal in Finder, or move ticked files to the Trash after confirming.', run: function () { reset(); go('files'); } },
     { id: 'apps', label: 'App uninstaller', pro: true, title: 'Remove an app and what it left behind.', text: 'Review lists the app and its files in your Library, each with a tick. Files another installed app would use start unticked.', run: function () { reset(); go('apps'); } },
-    { id: 'fleet', label: 'SSH fleet', title: 'Your servers beside your Mac.', text: 'With the optional ssh-fleet-monitor plugin installed, the hosts it monitors show health and risk here. Without it, Plugsquire shows nothing of it.', run: function () { reset(); go('fleet'); } },
+    { id: 'fleet', label: 'SSH fleet', pro: true, title: 'Your servers beside your Mac.', text: 'With the optional ssh-fleet-monitor plugin installed, the hosts it monitors show health and risk here. Without it, Plugsquire shows nothing of it.', run: function () { reset(); go('fleet'); } },
     { id: 'menubar', label: 'Menu bar', title: 'Health at a glance from the menu bar.', text: 'The icon follows the most serious finding. Its menu says how things stand, what needs attention and each accessory’s battery. Alerts arrive once, when a problem starts.', run: function () { reset(); go('overview'); openMenu(); } },
     { id: 'widgets', label: 'Battery widgets', title: 'Accessory batteries on your desktop.', text: 'A small and a medium widget show each connected accessory’s battery, per component, and when it was read.', run: function () { reset(); go('overview'); act('widgets'); } },
     { id: 'native', label: 'Native look', title: 'Prefer the native look? One switch.', text: 'Signature is the app’s own dark look. Native macOS follows the system’s light or dark mode and accent colour. Switch in the sidebar, Settings or the View menu.', run: function () { reset(); S.native = true; go('overview'); } }
@@ -824,7 +824,7 @@
       var b = e.target.closest('[data-scene]');
       if (!b) return;
       showScene(Number(b.getAttribute('data-scene')));
-      if (window.matchMedia('(max-width: 900px)').matches) root.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      if (window.matchMedia('(max-width: 1180px)').matches && root.getBoundingClientRect().top < 0) root.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     });
   }
   if (playBtn) playBtn.addEventListener('click', function () {
@@ -841,7 +841,7 @@
     b.addEventListener('click', function () {
       var i = SCENES.map(function (s) { return s.id; }).indexOf(b.getAttribute('data-show'));
       if (i < 0) return;
-      document.getElementById('demo').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      root.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       showScene(i);
     });
   });
@@ -849,5 +849,9 @@
   root.removeAttribute('hidden');
   var ns = document.getElementById('sim-fallback'); if (ns) ns.remove();
   render();
-  if (capT) { capT.textContent = SCENES[0].title; capP.textContent = SCENES[0].text; }
+  // Deep link from the features page: index.html?scene=fix opens that scene.
+  var want = (location.search.match(/[?&]scene=([\w-]+)/) || [])[1];
+  var wantIdx = want ? SCENES.map(function (s) { return s.id; }).indexOf(want) : -1;
+  if (wantIdx >= 0) showScene(wantIdx);
+  else if (capT) { capT.textContent = SCENES[0].title; capP.textContent = SCENES[0].text; }
 })();
